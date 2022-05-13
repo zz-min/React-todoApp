@@ -6,6 +6,7 @@ import "./TodoList.scss";
 const TodoList2 = ({ todos, onRemove, onToggle }) => {
   const rowRenderer = useCallback(
     ({ index, key, style }) => {
+      //const todo=todos[index];
       return (
         <TodoListItem
           key={key}

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import cn from "classnames";
 import {
   MdCheckBoxOutlineBlank,
@@ -8,7 +8,7 @@ import {
 //import cn from "classnames";
 import "./TodoListItem.scss";
 
-const TodoListItem = ({ todo, onRemove, onToggle }) => {
+const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   const { id, text, checked } = todo;
 
   return (
@@ -52,4 +52,7 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   ); */
 };
 
-export default React.memo(TodoListItem);
+export default React.memo(
+  TodoListItem,
+  (prevProps, nextProps) => prevProps.todo === nextProps.todo
+);
